@@ -1,0 +1,48 @@
+<html>
+<body>
+  <form action="./distancecalculator" method="POST" name ="DeliveryCalculatorForm" id="DeliveryCalculatorForm">
+	Distance:<input type="text" name="distance" id="distance"><br>
+	Weight:<input type="text" name="weight" id="weight"><br>
+	
+	<input type="button" name="btnSubmit" id="btnSubmit" value="submit" />
+  </form>
+  
+  <div name="OutputContent" id="OutputContent">look here</div>
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  
+  <script>
+
+     $(document).ready(function(){
+	  console.log("document ready");
+
+
+          $("#btnSubmit").click(function(event){
+          var form = $("#DeliveryCalculatorForm");
+          var url = form.attr("action");
+          
+           $.ajax( {
+             type: "POST",
+             url: url,
+             data: form.serialize(),
+             success: function(response){
+                
+                $("#OutputContent").text("$"+response);
+             },
+             error: function(e){
+                
+                $("#OutputContent").text(e.responseText);
+             },	
+             
+           });
+            
+         });
+     });   
+     
+     $(window).on("load",function() {
+       console.log("window loaded");
+     });
+            
+  </script>	
+</body>
+</html>
