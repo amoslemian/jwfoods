@@ -6,13 +6,14 @@
     <title>Jwfoods</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
   </head>
   <body>
     <!-- NAV bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <!-- Logo -->
       <a class="navbar-brand" href="#">
-      <img src="jw_foods_logo.jpg" alt="Logo" height="80">
+      <img src="static/jw_foods_logo.jpg" alt="Logo" height="80">
       </a>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
@@ -41,14 +42,32 @@
 
   
 
-   <form action="./distancecalculator" method="POST" name ="DeliveryCalculatorForm" id="DeliveryCalculatorForm">
-	    Distance:<input type="text" name="distance" id="distance"><br>
-	    Weight:<input type="text" name="weight" id="weight"><br>
-	
-	    <input type="button" name="btnSubmit" id="btnSubmit" value="submit" />
-   </form>
-  
-    <div name="OutputContent" id="OutputContent">look here</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Written Section</h2>
+          <p>This is where I add context.</p>
+          <p>i need to add pictures.</p>
+        </div>
+        <div class="col-md-6">
+          <div class="calculator-container">
+            <h2>Distance Calculator</h2>
+            <form action="./distancecalculator" method="POST" id="DeliveryCalculatorForm">
+              <div class="form-group">
+                <label for="distance">Distance:</label>
+                <input type="text" class="form-control" id="distance" name="distance">
+              </div>
+              <div class="form-group">
+                <label for="weight">Weight:</label>
+                <input type="text" class="form-control" id="weight" name="weight">
+              </div>
+              <button type="button" class="btn btn-primary" id="btnSubmit">Submit</button>
+            </form>
+            <div id="OutputContent" class="mt-3">Result will appear here</div>
+          </div>
+        </div>
+      </div>
+    </div>
   
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   
