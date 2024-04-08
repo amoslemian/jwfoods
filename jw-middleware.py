@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 
  
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates', static_folder='templates/static')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:torontomet123@localhost/jwfoods'
 
@@ -61,6 +61,9 @@ def DistanceCalculator():
      distanceValue = request.form.get('distance')
 
      weightValue = request.form.get('weight')
+
+     if not (distanceValue.isdigit() and weightValue.isdigit()):
+        return "Error: Please enter numbers only for distance and weight."
       
      query = db.session.query(Coefficient)
 

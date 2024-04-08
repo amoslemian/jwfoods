@@ -8,17 +8,20 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/styles.css">
   </head>
-  <body>
+  
+  <body data-spy="scroll" data-target=".navbar" data-offset="56">
     <!-- NAV bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <!-- Logo -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <a class="navbar-brand" href="#">
-      <img src="static/jw_foods_logo.jpg" alt="Logo" height="80">
+        <img src="static/jw_foods_logo.jpg" alt="Logo" height="80">
       </a>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#top">welcome <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#About">About</a>
@@ -35,14 +38,35 @@
         </ul>
       </div>
     </nav>
-  
+    <section class="bg-image text-center">
+      <div class="overlay"></div> <!-- Add overlay div -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Welcome to J. W. Foods</h2>
+            <p>Your premier destination for culinary excellence in the Greater Toronto Area (GTA)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div>
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
     
   
 
 
   
 
-    <div class="container">
+    <div id="Operations"class="container">
       <div class="row">
         <div class="col-md-6">
           <h2>Written Section</h2>
@@ -87,7 +111,7 @@
              data: form.serialize(),
              success: function(response){
                 
-                $("#OutputContent").text("$"+response);
+                $("#OutputContent").text(response);
             },
              error: function(e){
                 

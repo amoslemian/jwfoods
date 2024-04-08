@@ -1,6 +1,41 @@
+
+body {
+    background-color: #ced4da;
+}
+
+.navbar-scrolled {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background color */
+  transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+.section {
+  height: 100vh; /* Set the height of sections to viewport height */
+  padding-top: 56px; /* Offset for the fixed navbar height */
+}
+
+.bg-image {
+  background-image: url('meal prep.jpg');
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Position relative to place overlay */
+  color: #fff; /* Text color */
+  font-family: Arial, sans-serif; /* Set font family to Arial */
+}
+
+.overlay {
+  position: absolute; /* Position overlay relative to the section */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+}
 .calculator-container {
     background-color: #000;
     padding: 20px;
     border-radius: 10px;
     color: #fff;
-  }
+}
