@@ -7,6 +7,8 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   </head>
   
   <body data-spy="scroll" data-target=".navbar" data-offset="56">
@@ -38,12 +40,12 @@
         </ul>
       </div>
     </nav>
-    <section class="bg-image text-center mb-4">
+    <section class="bg-image text-center custom-section">
       <div class="overlay"></div> <!-- Add overlay div -->
       <div class="container">
         <div class="row">
-          <div class="col-md-12">
-            <h2>Welcome to J. W. Foods</h2>
+          <div class="col-md-12 ">
+            <h1>Welcome to J. W. Foods</h1>
             <p>Your premier destination for culinary excellence in the Greater Toronto Area (GTA)</p>
           </div>
         </div>
@@ -51,19 +53,20 @@
     </section>
     
     <section id="About">
-      <div class="container mb-4">
-        <div class="row bg-white">
+      <div class="container custom-section about-section">
+        <div class="row">
           <div class="col-md-6 ">
             <div class="about-text p-4 rounded ">
-              <h2>About Us</h2>
+              <h1>About Us</h1>
               <p class="neat-text">At J. W. Foods, we are passionate about crafting unforgettable dining experiences. With a dedication to quality, innovation, and customer satisfaction, we have established ourselves as a trusted name in the local food industry. Our team of culinary experts brings together a wealth of expertise and creativity to deliver dishes that are not only delicious but also reflective of the diverse flavors and cultures of the GTA.</p>
             </div>
           </div>
           <div class="col-md-6 d-flex align-items-center justify-content-center">
-            <div class="about-image">
-              <img src="static/about.jpg" class="img-fluid rounded-circle" alt="About Image" style="width: 400px; height: 400px;">
+            <div class="image-container">
+              <img src="static/about.jpg" class="img-fluid rounded-circle" alt="About Image">
             </div>
           </div>
+          
         </div>
       </div>
     </section>
@@ -73,8 +76,8 @@
 
   
 
-    <section id="Services"class="container mb-4">
-    
+    <section id="Services"class="container custom-section">
+      <h1>Healthy Cooked and Portioned Meal Prep</h1>
        <div class="row">
       <div class="col-md-4 mb-4">
         <div class="card bg-dark text-white position-relative">
@@ -128,10 +131,10 @@
       </div>
     </div>
       <div class="row">
-        <div class="col-md-6">
-          <h2>Written Section</h2>
-          <p>This is where I add context.</p>
-          <p>i need to add pictures.</p>
+        <div class="col-md-6 neat-text">
+        
+          <p>Calculate your delivery charges with ease using our convenient delivery calculator. Simply select the distance from J. W. Foods to your destination and input the package weight, and we'll provide you with an instant estimate of your delivery cost. Our transparent pricing ensures that you know exactly what to expect, so you can plan your orders with confidence. Try it out now and experience the convenience of hassle-free delivery pricing!</p>
+          
         </div>
         <div class="col-md-6">
           <div class="calculator-container">
@@ -188,7 +191,107 @@
      });
             
     </script>	
-  <!-- Bootstrap JS -->
+
+
+
+    <section id="Operations" class="container custom-section">
+      <div class="row">
+        <!-- Map Section -->
+        <div class="col-md-6">
+          <div id="map" style="height: 400px;"></div>
+        </div>
+        <!-- Text Section -->
+        <div class="col-md-6">
+          <div class="p-4">
+            <h1>Areas of Operation</h1>
+            <ul>
+              <li>Toronto</li>
+              <li>Mississauga</li>
+              <li>Brampton</li>
+              <li>Markham</li>
+              <li>Oakville</li>
+              <li>Vaughan</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    
+    
+    <script>
+      var map = L.map('map').setView([43.7, -79.4], 9); // Toronto coordinates
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+        maxZoom: 18
+      }).addTo(map);
+      
+      // Add markers for company locations
+      var companyLocations = [
+        { lat: 43.7, lng: -79.4, name: 'Toronto' },
+        { lat: 43.6, lng: -79.6, name: 'Mississauga' },
+        { lat: 43.7, lng: -79.8, name: 'Brampton' },
+        { lat: 43.9, lng: -79.3, name: 'Markham' },
+        { lat: 43.4, lng: -79.7, name: 'Oakville' },
+        { lat: 43.8, lng: -79.5, name: 'Vaughan' }
+      ];
+      
+      companyLocations.forEach(function(location) {
+        L.marker([location.lat, location.lng]).addTo(map)
+          .bindPopup(location.name);
+      });
+    </script>
+  
+    <section id="ContactUs" class="bg-dark">
+      <div class="container custom-section">
+        <div class="row">
+          <div class="col-md-6 neat-text">
+            <div class="p-4 text-white ">
+              <h1 class="text-center">Info</h1>
+              <p>JW FOODS  |  Meal Butler</p>
+              <p>2201 Brimley Rd. Unit #1,Toronto, ON M1S 4N7</p>
+              <p>M-F: 9am-6pm    //   Sat: 10am-4pm    //    Sun: Closed</p>
+              <p> <i class="bi bi-telephone-fill text-white"></i> (416) 298-1350</p>
+              <p><i class="bi bi-instagram text-white"></i> jwfoods</p>
+          </div>
+          </div>
+
+
+          <div class="col-md-6">
+            <div class="contact-box p-4">
+              <h1 class="text-white">Contact Us</h1>
+              <p class="text-white">Have questions or inquiries? Feel free to reach out to us using the form below.</p>
+              <form id="contactForm" action="#" method="POST">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="name" class="text-white">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="phone" class="text-white">Phone Number:</label>
+                    <input type="tel" class="form-control" id="phone" name="phone">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="text-white">Email:</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="comment" class="text-white">Comment:</label>
+                  <textarea class="form-control" id="comment" name="comment" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+   <!-- Bootstrap JS -->
+  
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
