@@ -6,7 +6,7 @@
     <title>Jwfoods</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="static/styles.css">
   </head>
   
   <body data-spy="scroll" data-target=".navbar" data-offset="56">
@@ -21,7 +21,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#top">welcome <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#top">Welcome <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#About">About</a>
@@ -38,7 +38,7 @@
         </ul>
       </div>
     </nav>
-    <section class="bg-image text-center">
+    <section class="bg-image text-center mb-4">
       <div class="overlay"></div> <!-- Add overlay div -->
       <div class="container">
         <div class="row">
@@ -49,24 +49,84 @@
         </div>
       </div>
     </section>
-
-    <div>
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+    
+    <section id="About">
+      <div class="container mb-4">
+        <div class="row bg-white">
+          <div class="col-md-6 ">
+            <div class="about-text p-4 rounded ">
+              <h2>About Us</h2>
+              <p class="neat-text">At J. W. Foods, we are passionate about crafting unforgettable dining experiences. With a dedication to quality, innovation, and customer satisfaction, we have established ourselves as a trusted name in the local food industry. Our team of culinary experts brings together a wealth of expertise and creativity to deliver dishes that are not only delicious but also reflective of the diverse flavors and cultures of the GTA.</p>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <div class="about-image">
+              <img src="static/about.jpg" class="img-fluid rounded-circle" alt="About Image" style="width: 400px; height: 400px;">
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
     
   
 
 
   
 
-    <div id="Operations"class="container">
+    <section id="Services"class="container mb-4">
+    
+       <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white position-relative">
+          <img src="static/cooked-salmon.jpg" class="card-img" alt="Food 1">
+          <div class="card-img-overlay d-flex align-items-end">
+            <h5 class="card-title">Cooked salmon</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white position-relative">
+          <img src="static/Broccoli.jpg" class="card-img" alt="Food 2">
+          <div class="card-img-overlay d-flex align-items-end">
+            <h5 class="card-title">Cooked Broccoli</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white position-relative">
+          <img src="static/breast.jpg" class="card-img" alt="Food 3">
+          <div class="card-img-overlay d-flex align-items-end">
+            <h5 class="card-title">Cooked Chicken Breast</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white position-relative">
+          <img src="static/greek.jpg" class="card-img" alt="Food 4">
+          <div class="card-img-overlay d-flex align-items-end">
+            <h5 class="card-title">Greek Yogurt Parfait</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white position-relative">
+          <img src="static/salad.jpg" class="card-img" alt="Food 5">
+          <div class="card-img-overlay d-flex align-items-end">
+            <h5 class="card-title"> Garden Salad</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white position-relative">
+          <img src="static/toast.jpg" class="card-img" alt="Food 6">
+          <div class="card-img-overlay d-flex align-items-end">
+            <h5 class="card-title">Avacado Toast</h5>
+          </div>
+        </div>
+      </div>
+    </div>
       <div class="row">
         <div class="col-md-6">
           <h2>Written Section</h2>
@@ -75,7 +135,7 @@
         </div>
         <div class="col-md-6">
           <div class="calculator-container">
-            <h2>Distance Calculator</h2>
+            <h2>Delivery Calculator</h2>
             <form action="./distancecalculator" method="POST" id="DeliveryCalculatorForm">
               <div class="form-group">
                 <label for="distance">Distance:</label>
@@ -91,7 +151,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
   
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   
